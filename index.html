@@ -3,7 +3,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
@@ -12,22 +11,21 @@
 
 
 
-    <scipt src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></scipt>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript">
     
-    var searchNyt = function(article) {
-
-        var queryUrl = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=" + article + "&api-key=MGqoJUDvZXI3giI3QcRh3vsHuF1HRGJG";
-        
-        
-        $.ajax({
-            url: queryUrl,
-            method: "GET"
-        }).then(function(response){
-            console.log(response);
-        });
-        
-    }
+    function displayArticle() {
+        var search = "election"
+        var queryUrl = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=" + search + "&api-key=MGqoJUDvZXI3giI3QcRh3vsHuF1HRGJG";
+                        
+            $.ajax({
+                url: queryUrl,
+                method: "GET"
+            }).then(function(response){
+                console.log(response);
+            });
+        };
+    displayArticle();
     </script>
 </body>
 </html>
