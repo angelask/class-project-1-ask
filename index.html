@@ -15,16 +15,19 @@
     <scipt src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></scipt>
     <script type="text/javascript">
     
-        var queryUrl = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=&api-key=MGqoJUDvZXI3giI3QcRh3vsHuF1HRGJG";
+    var searchNyt = function(article) {
 
-
-    $.ajax({
-        url: queryUrl,
-        method: "GET"
-    }).then(function(response){
-        console.log(response);
-    });
-    
+        var queryUrl = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=" + article + "&api-key=MGqoJUDvZXI3giI3QcRh3vsHuF1HRGJG";
+        
+        
+        $.ajax({
+            url: queryUrl,
+            method: "GET"
+        }).then(function(response){
+            console.log(response);
+        });
+        
+    }
     </script>
 </body>
 </html>
